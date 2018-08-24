@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>侧栏工具条开发css实现</title>
+    <style lang="text/css">
+        *{margin:0; padding:0;}
+        .toolbar {
+            position:fixed;
+            right:5%;
+            bottom:5px;
+        }
+        .toolbar-item {
+            position:relative;
+            display:block;
+            width:52px;
+            height: 52px;
+            background-image: url(toolbar.png);
+            background-repeat: no-repeat;
+            margin-top:1px;
+            transition: background-position 1s;
+        }
+        .toolbar-item-weixin {
+            background-position: 0 -798px;
+        }
+        .toolbar-item-weixin:hover{
+             background-position: 0 -860px;
+        }
+        .toolbar-item-weixin:hover .weixin,
+        .toolbar-item-app:hover .app{
+            transition: all 1s;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .toolbar-item-feedback {
+            background-position: 0 -426px;
+        }
+        .toolbar-item-feedback:hover{
+             background-position: 0 -488px;
+        }
+        .toolbar-item-app {
+            background-position: 0 -550px;
+        }
+        .toolbar-item-app:hover{
+             background-position: 0 -612px;
+        }
+        .toolbar-item-top {
+            background-position: 0 -674px;
+        }
+        .toolbar-item-top:hover{
+             background-position: 0 -736px;
+        }
+        .toolbar-layer {
+            background-image: url(toolbar.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 52px;
+            bottom: -10px;
+            width:172px;
+            transform-origin:  95% 95%;
+            opacity: 0;
+            transition: all 1s;
+            transform: scale(0);
+        }
+        .weixin{
+            height: 212px;
+            background-position: 0 0;
+        }
+        .app{
+            height: 194px;
+            background-position: 0 -222px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p>我是第1行我是第1行我是第1行我是第1行我是第1行我是第1行我是第1行</p>
+        <p>我是第2行我是第2行我是第2行我是第2行我是第2行我是第2行我是第2行</p>
+        <p>我是第3行我是第3行我是第3行我是第3行我是第3行我是第3行我是第3行</p>
+        <p>我是第4行我是第4行我是第4行我是第4行我是第4行我是第4行我是第4行</p>
+        <p>我是第5行我是第5行我是第5行我是第5行我是第5行我是第5行我是第5行</p>
+        <p>我是第6行我是第6行我是第6行我是第6行我是第6行我是第6行我是第6行</p>
+        <p>我是第7行我是第7行我是第7行我是第7行我是第7行我是第7行我是第7行</p>
+        <p>我是第8行我是第8行我是第8行我是第8行我是第8行我是第8行我是第8行</p>
+        <p>我是第9行我是第9行我是第9行我是第9行我是第9行我是第9行我是第9行</p>
+        <p>我是第10行我是第10行我是第10行我是第10行我是第10行我是第10行我是第10行</p>
+        <p>我是第11行我是第11行我是第11行我是第11行我是第11行我是第11行我是第11行</p>
+        <p>我是第12行我是第12行我是第12行我是第12行我是第12行我是第12行我是第12行</p>
+        <p>我是第13行我是第13行我是第13行我是第13行我是第13行我是第13行我是第13行</p>
+        <p>我是第14行我是第14行我是第14行我是第14行我是第14行我是第14行我是第14行</p>
+        <p>我是第15行我是第15行我是第15行我是第15行我是第15行我是第15行我是第15行</p>
+        <p>我是第16行我是第16行我是第16行我是第16行我是第16行我是第16行我是第16行</p>
+        <p>我是第17行我是第17行我是第17行我是第17行我是第17行我是第17行我是第17行</p>
+        <p>我是第18行我是第18行我是第18行我是第18行我是第18行我是第18行我是第18行</p>
+        <p>我是第19行我是第19行我是第19行我是第19行我是第19行我是第19行我是第19行</p>
+        <p>我是第20行我是第20行我是第20行我是第20行我是第20行我是第20行我是第20行</p>
+        <p>我是第21行我是第21行我是第21行我是第21行我是第21行我是第21行我是第21行</p>
+        <p>我是第22行我是第22行我是第22行我是第22行我是第22行我是第22行我是第22行</p>
+        <p>我是第23行我是第23行我是第23行我是第23行我是第23行我是第23行我是第23行</p>
+        <p>我是第24行我是第24行我是第24行我是第24行我是第24行我是第24行我是第24行</p>
+        <p>我是第25行我是第25行我是第25行我是第25行我是第25行我是第25行我是第25行</p>
+        <p>我是第26行我是第26行我是第26行我是第26行我是第26行我是第26行我是第26行</p>
+        <p>我是第27行我是第27行我是第27行我是第27行我是第27行我是第27行我是第27行</p>
+        <p>我是第28行我是第28行我是第28行我是第28行我是第28行我是第28行我是第28行</p>
+        <p>我是第29行我是第29行我是第29行我是第29行我是第29行我是第29行我是第29行</p>
+        <p>我是第30行我是第30行我是第30行我是第30行我是第30行我是第30行我是第30行</p>
+        <p>我是第31行我是第31行我是第31行我是第31行我是第31行我是第31行我是第31行</p>
+        <p>我是第32行我是第32行我是第32行我是第32行我是第32行我是第32行我是第32行</p>
+        <p>我是第33行我是第33行我是第33行我是第33行我是第33行我是第33行我是第33行</p>
+        <p>我是第34行我是第34行我是第34行我是第34行我是第34行我是第34行我是第34行</p>
+        <p>我是第35行我是第35行我是第35行我是第35行我是第35行我是第35行我是第35行</p>
+        <p>我是第36行我是第36行我是第36行我是第36行我是第36行我是第36行我是第36行</p>
+        <p>我是第37行我是第37行我是第37行我是第37行我是第37行我是第37行我是第37行</p>
+        <p>我是第38行我是第38行我是第38行我是第38行我是第38行我是第38行我是第38行</p>
+        <p>我是第39行我是第39行我是第39行我是第39行我是第39行我是第39行我是第39行</p>
+        <p>我是第40行我是第40行我是第40行我是第40行我是第40行我是第40行我是第40行</p>
+        <p>我是第41行我是第41行我是第41行我是第41行我是第41行我是第41行我是第41行</p>
+        <p>我是第42行我是第42行我是第42行我是第42行我是第42行我是第42行我是第42行</p>
+        <p>我是第43行我是第43行我是第43行我是第43行我是第43行我是第43行我是第43行</p>
+        <p>我是第44行我是第44行我是第44行我是第44行我是第44行我是第44行我是第44行</p>
+        <p>我是第45行我是第45行我是第45行我是第45行我是第45行我是第45行我是第45行</p>
+        <p>我是第46行我是第46行我是第46行我是第46行我是第46行我是第46行我是第46行</p>
+        <p>我是第47行我是第47行我是第47行我是第47行我是第47行我是第47行我是第47行</p>
+        <p>我是第48行我是第48行我是第48行我是第48行我是第48行我是第48行我是第48行</p>
+        <p>我是第49行我是第49行我是第49行我是第49行我是第49行我是第49行我是第49行</p>
+        <p>我是第50行我是第50行我是第50行我是第50行我是第50行我是第50行我是第50行</p>
+    </div>
+    <div class="toolbar">
+        <a href="#" class="toolbar-item toolbar-item-weixin"><span class="toolbar-layer weixin"></span></a>
+        <a href="#" class="toolbar-item toolbar-item-feedback"></a>
+        <a href="#" class="toolbar-item toolbar-item-app"><span class="toolbar-layer app"></span></a>
+        <a href="#" class="toolbar-item toolbar-item-top" id="top"></a>
+    </div>
+    <script>
+        var content = document.getElementById('content');
+        var top = document.getElementById('top');
+        top.onclick = function () {
+            content.scrollTop=0;
+        }
+    </script>
+</body>
+</html>
