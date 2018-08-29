@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任意区间随机数的生成</title>
+</head>
+<body>
+    <script>
+        function random(min,max) {
+            var total = max-min+1;
+            return Math.floor(Math.random()*total+min)
+        }
+        for (var i=0;i<10;i++){
+            document.write(random(4,9));
+            document.write('<br/>')
+        }
+    </script>
+</body>
+</html>
