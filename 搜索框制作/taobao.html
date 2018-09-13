@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝搜索框</title>
+    <style lang="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        a{
+            text-decoration: none;
+            color:#6c6c6c;
+        }
+        ul {
+            list-style: none;
+        }
+        @font-face{
+            font-family: iconfont;
+            src:url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.eot);
+        }
+        .search-btn {
+            float:right;
+        }
+        .btn {
+            background: url(http://gtms01.alicdn.com/tps/i1/T1qyj8Fc8aXXc4E9bI-400-300.png);
+            width:100px;
+            height: 45px;
+            background-position: 0 -200px;
+            border:0;
+            cursor: pointer;
+        }
+        .search-tips {
+            float: right;
+            margin: auto 10px;
+        }
+        .search-pannel{
+            width: 100%;
+        }
+        .pannel {
+            position: relative;
+            height: 39px;
+            background-color: #f50;
+            overflow: hidden;
+            padding:3px 0 3px 77px;
+         }
+         .pannel input {
+             height: 39px;
+             line-height: 39px;
+             width: 100%;
+             border:0 none;
+             outline: none;
+             background-color: #fff;
+         }
+         .pannel i {
+             z-index: 2;
+             position: absolute;
+             top:14px;
+             left:86px;
+         }
+         .iconfont {
+             font-size:12px;
+             font-style: normal;
+             font-family: iconfont;
+             color:#6c6c6c;
+         }
+         .search-list {
+             position:absolute;
+             top:3px;
+             left:3px;
+             width:72px;
+             height: 39px;
+             overflow: hidden;
+             background:#fff;
+             z-index: 3
+         }
+         .search-list li{
+             height: 39px;
+             line-height: 39px;
+             text-align: center;
+             overflow: hidden;
+         }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-list" id="search-list">
+            <ul>
+                <li id="tab-1">宝贝</li>
+                <li id="tab-2">店铺</li>
+            </ul>
+        </div>
+        <div class="search-pannel">
+            <form action="">
+                <div class="search-tips">
+                    <a href="#">高级
+                        <br>搜索</a>
+                </div>
+                <div class="search-btn">
+                    <button class="btn" type="submit"></button>
+                </div>
+                <div class="pannel">
+                    <input type="text" x-webkit-speech="">
+                    <i class="iconfont">hi</i>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <script>
+        var getDom = function(id){
+            return document.getElementById(id);
+        }
+
+        var addEvent = function(id,event,fn){
+            var el = getDom(id) || document;
+            if(el.addEventListener){
+                el.addEventListener(event,fn,false);
+            }else if(el.attachEvent){
+                el.attachEvent('on'+event,fn)
+            }
+        }
+        
+        addEvent('search-list','mouseover',function(){
+            getDom('search-list').style.height = "78px";
+        });
+
+        addEvent('tab-1','click',function(){
+            getDom('search-list').style.height = "39px";
+        })
+        addEvent('tab-2', 'click', function () {
+                getDom('search-list').style.marginTop = "-39px";
+            })
+    </script>
+</body>
+</html>

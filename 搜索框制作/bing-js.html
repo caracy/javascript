@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bing search</title>
+    <style lang="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: #333;
+        }
+
+        .bg-div {
+            background: url(img/bg.jpg) no-repeat center;
+            width: 1800px;
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 200px;
+            left: 655px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        form {
+            width: 500px;
+            height: 50px;
+            background: #fff;
+            float: left;
+        }
+
+        .search-text {
+            border: none;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            outline: none;
+            width: 400px;
+        }
+
+        .search-btn {
+            border: none;
+            width: 40px;
+            height: 40px;
+            background: url(img/search.jpg) no-repeat center;
+            background-size: 40px 40px;
+            line-height: 40px;
+            margin-top: 5px;
+            float: right;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .suggest {
+            width: 500px;
+            background: #fff;
+            border-top: 1px solid #999;
+        }
+
+        .suggest ul {
+            list-style: none;
+        }
+
+        .suggest ul li {
+            height: 25px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .suggest ul li:hover {
+            background: #ddd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-div">
+        <div class="search-box">
+            <img src="img/logo.jpg" alt="">
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-text" id="search-inp">
+                <input type="submit" class="search-btn" value="">
+            </form>
+        </div>
+    </div>
+    <div class="suggest" style="display: none" id="search-suggest">
+        <ul class="results">
+            <li>搜索结果1</li>
+            <li>搜索结果2</li>
+            <li>搜索结果3</li>
+            <li>搜索结果4</li>
+        </ul>
+    </div>
+    <script>
+        //获取元素函数
+        function getDom(id) {
+            return document.getElementById(id);
+        }
+        //元素绑定事件函数
+        function addEvent(id,event,fn){
+            var el = getDom(id) || document;//容错，以防传入不存在的id；
+            //可以为一个元素绑定多个事件
+            if(el.addEventListener){
+                el.addEventListener(event,fn,false)
+            }else if(el.attachEvent){//适用于IE浏览器 IE8以下
+                el.attachEvent('on'+event,fn)
+            }
+        }
+        //获取元素绝对定位的Left值
+        function getElementLeft(el){
+            var elLeft = el.offsetLeft;
+            var current = el.offsetParent;
+            while(current !== null){
+                elLeft += current.offsetLeft;
+                current = current.offsetParent;
+            }
+            return elLeft;
+        }
+        //获取元素绝对定位的Top值
+        function getElementTop(el) {
+            var elTop = el.offsetTop;
+            var current = el.offsetParent;
+            while( current !== null ) {
+                elTop += current.offsetTop;
+                current = current.offsetParent;
+            }
+            return elTop;
+        }
+    
+        addEvent('search-inp','keyup',function(){
+            getDom('search-suggest').style.display = 'block';
+            getDom('search-suggest').style.position = "absolute";
+            getDom('search-suggest').style.top = getElementTop(getDom('search-form')) + 50 +'px';
+            getDom('search-suggest').style.left = getElementLeft(getDom('search-form')) + 'px';
+        })
+
+        addEvent('document','click',function(){
+             getDom('search-suggest').style.display = 'none';
+        })
+
+        
+    </script>
+</body>
+
+</html>
