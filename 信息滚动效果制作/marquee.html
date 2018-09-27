@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>marquee用法示例</title>
+    <style>
+        .mar{
+            color:brown;
+            margin-bottom:50px;
+        }
+        .mar p{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mar">
+        <h2>&ltmarquee&gt知识点</h2>
+        <h4>1.behavior 滚动方式</h4>
+        <p>alternate:表示在两端之间来回滚动；</p>
+        <p>scroll：由一端滚向另一端，会重复；</p>
+        <p>slide：由一端滚向另一端，不会重复。</p>
+        <h4>2.direction 滚动的方向：down、up、left、right</h4>
+        <h4>3.loop滚动的次数（当loop=-1时，表示一直滚动无限循环，默认-1）</h4>
+        <h4>4.scrollamount设定活动字幕的滚动速度</h4>
+        <h4>5.scrolldelay设定活动字幕滚动两次之间的延迟时间</h4>
+    </div>
+    <div id="box">
+        <dl>
+            <dt>1.文字滚动示例（默认）：</dt>
+            <dd><marquee>我是默认向左滚动。。。</marquee></dd>
+        </dl>
+        <dl>
+            <dt>2.文字滚动示例（向右）：</dt>
+            <dd>
+                <marquee direction="right" scrolldelay="200">我是向右滚动。。。</marquee>
+            </dd>
+        </dl>
+        <dl>
+            <dt>3.文字滚动示例（向左，滚动方式为alternate，循环3次，速度为2）：</dt>
+            <dd>
+                <marquee scrollamount="10" behavior="alternate" loop="3">我来回滚动。。。</marquee>
+            </dd>
+        </dl>
+        <dl>
+            <dt>4.文字滚动示例（向上，背景为#ccff66，设置了背景的宽高）：</dt>
+            <dd>
+                <marquee direction="up" bgcolor="#ccff66" width="250" height="55" scrollamount="3">我在规定区域内滚动，向上滚动</marquee>
+            </dd>
+        </dl>
+    </div>
+    <!-- 无法实现无缝滚动 -->
+    <div class="top">
+        <marquee direction="up" bgcolor="#ccff66" width="350" height="200" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+            <h2>&ltmarquee&gt知识点</h2>
+            <h4>1.behavior 滚动方式</h4>
+            <p>alternate:表示在两端之间来回滚动；</p>
+            <p>scroll：由一端滚向另一端，会重复；</p>
+            <p>slide：由一端滚向另一端，不会重复。</p>
+            <h4>2.direction 滚动的方向：down、up、left、right</h4>
+            <h4>3.loop滚动的次数（当loop=-1时，表示一直滚动无限循环，默认-1）</h4>
+            <h4>4.scrollamount设定活动字幕的滚动速度</h4>
+            <h4>5.scrolldelay设定活动字幕滚动两次之间的延迟时间</h4>
+        </marquee>
+    </div>
+</body>
+</html>

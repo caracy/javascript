@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js实现无缝滚动</title>
+    <style lang="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .mooc{
+            width: 500px;
+            height:260px;
+            border: 5px solid #999;
+            margin: 50px auto;
+            border-radius: 20px;
+        }
+        .moocBox {
+            height: 200px;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+            padding-left:15px;
+        }
+        ul li {
+            height:35px;
+            line-height: 35px;
+        }
+        .moocTitle{
+            width: 485px;
+            height: 60px;
+            background: #cc0066;
+            line-height: 60px;
+            color:#fff;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding-left:15px;
+        }
+        li:hover{
+            color:#cc0066;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="mooc" id="mooc">
+        <h3 class="moocTitle">慕课网最新课程</h3>
+        <div class="moocBox" id="moocBox">
+            <ul id="cont1">
+                <li>1.学会html5 绝对的屌丝逆袭</li>
+                <li>2.tab页面切换效果</li>
+                <li>3.圆角水晶按钮制作（案例）</li>
+                <li>4.HML+CSS基础课程系列</li>
+                <li>5.分页页码制作（案例）</li>
+                <li>6.导航条菜单的制作</li>
+                <li>7.信息滚动条效果制作</li>
+                <li>8.搜索框制作</li>
+                <li>9.瀑布流布局</li>
+            </ul>
+            <ul id="cont2"></ul>
+        </div>
+    </div>
+    <script>
+        var mooc = document.getElementById('moocBox');
+        var cont1 = document.getElementById('cont1');
+        var cont2 = document.getElementById('cont2');
+        cont2.innerHTML = cont1.innerHTML;
+
+        function scrollUp() {
+            if(mooc.scrollTop >= cont1.offsetHeight){
+                mooc.scrollTop = 0;
+            }else{
+                mooc.scrollTop++;
+             }
+        }
+        var time = 50;
+        var timer = setInterval("scrollUp()",time)
+       
+        mooc.onmouseover = function(){
+            clearInterval(timer);
+        }
+        mooc.onmouseout = function(){
+            timer = setInterval("scrollUp()", time);
+        }
+    </script>
+</body>
+</html>
