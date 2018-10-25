@@ -1,0 +1,293 @@
+/*******************通用样式**********************/
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#000;
+}
+/* icon-font */
+@font-face {
+  font-family: 'lk';
+  src:  url('../fonts/lk.eot?900zkj');
+  src:  url('../fonts/lk.eot?900zkj#iefix') format('embedded-opentype'),
+    url('../fonts/lk.ttf?900zkj') format('truetype'),
+    url('../fonts/lk.woff?900zkj') format('woff'),
+    url('../fonts/lk.svg?900zkj#lk') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lk' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-mobile:before {
+  content: "\e958";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-menu2:before {
+  content: "\e9be";
+}
+
+.btn-register { 
+  color: #ffffff; 
+  background-color: #0AB4F7; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-register:hover, 
+.btn-register:focus, 
+.btn-register:active, 
+.btn-register.active, 
+.open .dropdown-toggle.btn-register { 
+  color: #ffffff; 
+  background-color: #08adf2; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-register:active, 
+.btn-register.active, 
+.open .dropdown-toggle.btn-register { 
+  background-image: none; 
+} 
+ 
+.btn-register.disabled, 
+.btn-register[disabled], 
+fieldset[disabled] .btn-register, 
+.btn-register.disabled:hover, 
+.btn-register[disabled]:hover, 
+fieldset[disabled] .btn-register:hover, 
+.btn-register.disabled:focus, 
+.btn-register[disabled]:focus, 
+fieldset[disabled] .btn-register:focus, 
+.btn-register.disabled:active, 
+.btn-register[disabled]:active, 
+fieldset[disabled] .btn-register:active, 
+.btn-register.disabled.active, 
+.btn-register[disabled].active, 
+fieldset[disabled] .btn-register.active { 
+  background-color: #0AB4F7; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-register .badge { 
+  color: #0AB4F7; 
+  background-color: #ffffff; 
+}
+/*******************头部样式**********************/
+#lk_header{
+
+}
+#lk_header .top-bar{
+    height:40px;
+    line-height: 39px;
+    border-bottom: 1px solid #e0e0e0;
+}
+#lk_header .top-bar .container .row>div+div{
+    border-left:1px solid #e0e0e0;
+}
+#lk_header .top-bar .container .row a{
+    position: relative;
+}
+#lk_header .top-bar .container .color{
+    background: #fff;
+}
+#lk_header .top-bar .container .row a img{
+    display: none;
+    position: absolute;
+    left:50%;
+    margin-left:-65px;
+    margin-top:-10px;
+    z-index: 10;
+}
+#lk_header .top-bar .container .row .left{
+    margin-left:10px;
+}
+#lk_header .top-bar .container .row a:hover img{
+    display: block;
+    z-index:10;
+}
+#lk_header .navbar-lk{
+    background: #fff;
+    z-index: 1;
+}
+#lk_header .navbar-lk .navbar-brand{
+    height: 70px;
+    padding:10px 15px;
+}
+#lk_header .navbar-lk .navbar-nav a{
+    height: 70px;
+    line-height: 40px;
+}
+#lk_header .navbar-lk .navbar-nav .active>a{
+  background-color: #fff;
+  border-bottom: 2px solid #0AB4F7;
+}
+#lk_header .navbar-lk .navbar-nav a:hover{
+  border-bottom: 2px solid #0AB4F7;
+}
+#lk_header .navbar-lk .navbar-toggle {
+    margin-top: 16px;
+}
+
+/*********************轮播图样式**********************/
+#lk_carousel{
+  margin-top:-20px;
+}
+#lk_carousel img{
+  height: 450px;
+}
+/***********************关于我们样式*************************/
+#lk_about .title{
+  padding-bottom: 15px;
+}
+#lk_about .row p{
+  line-height: 26px;
+  color:#666;
+  font-size:15px;
+}
+#lk_about .img-rounded {
+    border-radius: 10px;
+}
+@media screen and (max-width:800px){
+    #lk_carousel img{
+      height: 250px;
+    }
+}
+/***************************产品特色样式********************************/
+#lk_product{
+  background: #f0f0f0;
+  padding:30px 0;
+}
+#lk_product .nav{
+  font-size:18px;
+}
+#lk_product .nav a{
+  color:#999;
+}
+#lk_product .nav li.active a{
+  border:none;
+  background: transparent;
+  border-bottom:2px solid #0AB4F7;
+  color:#000;
+}
+#lk_product .tab-content{
+  margin-top:50px;
+}
+#product1 .media .media-body{
+  vertical-align: bottom;
+  margin-bottom: 0;
+}
+#product1 .media .media-body p{
+  margin-bottom: 0;
+  color:#999;
+}
+#product1 .breadcrumb{
+  margin-top:30px;
+  background: #f0f0f0;
+  padding:8px 0;
+}
+#product1 .part_4{
+    margin-top:25px;
+}
+#product1 .btn2{
+  margin-left:25px;
+}
+#product2 .lead{
+  color:#666;
+  margin-top:25px;
+}
+#product3 .lead{
+  margin-top:35px;
+}
+#product3 .text1{
+  font-size:18px;
+  color:#666;
+  margin-bottom:35px; 
+}
+#product3 .read {
+  width:250px;
+  height: 35px;
+  background: #333;
+  color:#fff;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+}
+/************************热门课程样式************************/
+#lk_hot .lesson{
+  padding:15px 10px;
+}
+#lk_hot .lesson .media-left{
+  width:20%;
+}
+#lk_hot .lesson .media-body{
+  width:60%;
+  vertical-align: middle;
+}
+#lk_hot .lesson .media-body p{
+  margin-top:10px;
+}
+#lk_hot .lesson .media-right{
+  width:20%;
+  font-size:16px;
+  vertical-align: middle;
+}
+/***********************友情链接样式*************************/
+#lk_link ul{
+  list-style: none;
+  text-align: center;
+}
+#lk_link ul li{
+  display: inline-block;
+  padding:20px 30px;
+}
+/***********************footer样式*************************/
+#lk_footer {
+  width:100%;
+  height: 200px;
+  background: url('../img/ft_bg.png') no-repeat center;
+  background-size:cover; 
+  color:#fff;
+  font-size:16px;
+}
+#lk_footer ul{
+  list-style: none;
+}
+#lk_footer ul li{
+  line-height: 2;
+}
+#lk_footer .one,#lk_footer .two{
+  padding:10px;
+  border-right: 1px solid #666;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#lk_footer .three {
+  padding:10px 50px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#lk_footer .three img{
+  margin-right: 15px;
+}
